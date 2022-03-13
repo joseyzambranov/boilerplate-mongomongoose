@@ -1,9 +1,8 @@
 require('dotenv').config();
 const mongoose = require("mongoose")
+mongoose.connect(process.env.MONGO_URI)
 
 const Schema = mongoose.Schema
-
-mongoose.connect(process.env.MONGO_URI)
 
 const personSchema = new Schema({
   name:{type:String,requied:true},
