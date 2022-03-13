@@ -10,10 +10,20 @@ const personSchema = new Schema({
   favoriteFoods:[String]
 
 })
-var Person = mongoose.model("Person",personSchema)
+const Person = mongoose.model("Person",personSchema)
 
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+
+  var sumer = new Person({
+    name:"sumer",
+    age:25,
+    favoriteFoods:["hello","pizza","burger"]
+  })
+
+  sumer.save(function(err,data){
+    if(err) return console.error(err)
+    done(null , data);
+  })
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
