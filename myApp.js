@@ -12,11 +12,11 @@ const personSchema = new Schema({
 })
 var Person = mongoose.model("person",personSchema)
 
-let sumerPerson = new Person({
+/*let sumerPerson = new Person({
   name:"sumer",
   age:23,
   favoriteFoods:["pizza","burger","arepa"]
-})
+})*/
 
 
 const createAndSavePerson = (done) => {
